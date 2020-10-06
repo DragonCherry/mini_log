@@ -1,14 +1,34 @@
-# mini_log
+## mini_log
 
-A simple log utility.
+A lightweight logger utility.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```
+logd('Debug log message.');
+logi('Debug log message.');
+logw('Debug log message.');
+loge('Debug log message.');
+logc('Debug log message.');
+logJson({
+  'outerKey': {'innerKey': 'innerValue'}
+});
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Result
+
+[log] ⚪[2020-10-06 14:27:32.560097] <package:chatbot/main.dart 17:3 in main> Debug log message.
+
+[log] 🔵[2020-10-06 14:27:32.585174] <package:chatbot/main.dart 18:3 in main> Debug log message.
+
+[log] 🤔[2020-10-06 14:27:32.586513] <package:chatbot/main.dart 19:3 in main> Debug log message.
+
+[log] 😡[2020-10-06 14:27:32.587854] <package:chatbot/main.dart 20:3 in main> Debug log message.
+
+[log] 💥[2020-10-06 14:27:32.588777] <package:chatbot/main.dart 21:3 in main> Debug log message.
+
+[log] {
+  "outerKey": {
+    "innerKey": "innerValue"
+  }
+}
