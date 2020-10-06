@@ -1,6 +1,6 @@
 name: mini_log
-description: A lightweight logger utility.
-version: 0.5.0
+description: A lightweight logger utility. It prints out log with prefix icon and line location in source file with log message.
+version: 0.5.1
 homepage: https://github.com/DragonCherry/mini_log
 
 environment:
