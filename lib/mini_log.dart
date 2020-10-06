@@ -3,34 +3,42 @@ library mini_log;
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 void logd(dynamic msg) {
-  log(_createMessage('⚪', msg));
+  _printLog(_createMessage('⚪', msg));
 }
 
 void logi(dynamic msg) {
-  log(_createMessage('🔵', msg));
+  _printLog(_createMessage('🔵', msg));
 }
 
 void logw(dynamic msg) {
-  log(_createMessage('🤔', msg));
+  _printLog(_createMessage('🤔', msg));
 }
 
 void loge(dynamic msg) {
-  log(_createMessage('😡', msg));
+  _printLog(_createMessage('😡', msg));
 }
 
 void logc(dynamic msg) {
-  log(_createMessage('💥', msg));
+  _printLog(_createMessage('💥', msg));
 }
 
 void logJson(dynamic value) {
   if (value is String) {
     final map = jsonDecode(value);
-    log(JsonEncoder.withIndent('  ').convert(map));
+    _printLog(JsonEncoder.withIndent('  ').convert(map));
   } else {
-    log(JsonEncoder.withIndent('  ').convert(value));
+    _printLog(JsonEncoder.withIndent('  ').convert(value));
+  }
+}
+
+void _printLog(dynamic value) {
+  if (kReleaseMode) {
+  } else {
+    log(value);
   }
 }
 
